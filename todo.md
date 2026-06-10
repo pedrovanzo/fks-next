@@ -11,6 +11,9 @@
 * Reimagine and implement the predefined folder structure feature (pre built folder structures on one click).
 * Internationalization.
 * Define most efficient DB and host.
+* Gating usage to free and Pro plans.
+* Add a standalone handle for each folder and session.
+* Add saving and sharing functionalities to session, folders and links.
 ## Grilling sessions
 
 * Core concepts for MVP.
