@@ -1,7 +1,7 @@
 import { readFile } from 'fs/promises';
 import path from 'path';
 import { LinkManager } from '@/app/components/LinkManager';
-import { TodoNote } from '@/app/components/TodoNote';
+import { TodoNote } from '@/app/components/dev/TodoNote';
 
 export default async function Home() {
   const todoContent = await readFile(

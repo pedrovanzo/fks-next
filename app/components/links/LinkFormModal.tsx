@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Modal } from './Modal';
+import { Modal } from '@/app/components/ui/Modal';
 import type { Link } from '@/app/types';
 
 interface LinkFormModalProps {
@@ -43,10 +43,7 @@ export function LinkFormModal({ mode, link, onSave, onClose }: LinkFormModalProp
             autoFocus
             type="text"
             value={url}
-            onChange={(e) => {
-              setUrl(e.target.value);
-              setUrlError('');
-            }}
+            onChange={(e) => { setUrl(e.target.value); setUrlError(''); }}
             placeholder="https://example.com"
             className="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary text-sm transition-colors"
           />
@@ -54,8 +51,7 @@ export function LinkFormModal({ mode, link, onSave, onClose }: LinkFormModalProp
         </div>
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-            Title{' '}
-            <span className="text-xs font-normal text-gray-400">(optional)</span>
+            Title <span className="text-xs font-normal text-gray-400">(optional)</span>
           </label>
           <input
             type="text"
@@ -67,8 +63,7 @@ export function LinkFormModal({ mode, link, onSave, onClose }: LinkFormModalProp
         </div>
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-            Description{' '}
-            <span className="text-xs font-normal text-gray-400">(optional)</span>
+            Description <span className="text-xs font-normal text-gray-400">(optional)</span>
           </label>
           <textarea
             value={description}

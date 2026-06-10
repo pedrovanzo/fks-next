@@ -1,20 +1,13 @@
 'use client';
 
 import { Globe, Pencil, Trash2 } from 'lucide-react';
+import { getDomain } from '@/app/lib/url';
 import type { Link } from '@/app/types';
 
 interface LinkItemProps {
   link: Link;
   onEdit: () => void;
   onDelete: () => void;
-}
-
-function getDomain(url: string): string {
-  try {
-    return new URL(url).hostname;
-  } catch {
-    return url;
-  }
 }
 
 export function LinkItem({ link, onEdit, onDelete }: LinkItemProps) {

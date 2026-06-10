@@ -4,7 +4,7 @@ import { TriangleAlert } from 'lucide-react';
 import { Modal } from './Modal';
 
 interface DeleteConfirmModalProps {
-  type: 'folder' | 'link';
+  type: 'folder' | 'session' | 'link';
   name: string;
   hasChildren?: boolean;
   onConfirm: () => void;
@@ -31,7 +31,12 @@ export function DeleteConfirmModal({
             </p>
             {type === 'folder' && hasChildren && (
               <p className="mt-1 text-xs text-red-500">
-                All subfolders and links inside will be permanently deleted.
+                All subfolders, sessions, and links inside will be permanently deleted.
+              </p>
+            )}
+            {type === 'session' && hasChildren && (
+              <p className="mt-1 text-xs text-red-500">
+                All links inside this session will be permanently deleted.
               </p>
             )}
           </div>
@@ -44,10 +49,7 @@ export function DeleteConfirmModal({
             Cancel
           </button>
           <button
-            onClick={() => {
-              onConfirm();
-              onClose();
-            }}
+            onClick={() => { onConfirm(); onClose(); }}
             className="px-4 py-2 text-sm rounded-lg bg-red-500 text-white font-medium hover:bg-red-600 transition-colors"
           >
             Delete

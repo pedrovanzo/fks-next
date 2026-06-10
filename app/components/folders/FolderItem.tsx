@@ -24,20 +24,14 @@ export function FolderItem({ folder, onOpen, onEdit, onDelete }: FolderItemProps
       {hovered && (
         <div className="absolute top-1.5 right-1.5 flex gap-0.5 z-10">
           <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onEdit();
-            }}
+            onClick={(e) => { e.stopPropagation(); onEdit(); }}
             className="p-1 rounded bg-white dark:bg-neutral-800 shadow text-gray-500 hover:text-primary dark:hover:text-primary transition-colors"
             title="Rename"
           >
             <Pencil size={11} />
           </button>
           <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onDelete();
-            }}
+            onClick={(e) => { e.stopPropagation(); onDelete(); }}
             className="p-1 rounded bg-white dark:bg-neutral-800 shadow text-gray-500 hover:text-red-500 dark:hover:text-red-400 transition-colors"
             title="Delete"
           >
@@ -45,11 +39,7 @@ export function FolderItem({ folder, onOpen, onEdit, onDelete }: FolderItemProps
           </button>
         </div>
       )}
-      <FolderIcon
-        size={44}
-        className="text-amber-400 dark:text-amber-300"
-        strokeWidth={1.5}
-      />
+      <FolderIcon size={44} className="text-amber-400 dark:text-amber-300" strokeWidth={1.5} />
       <span className="text-xs text-center text-gray-700 dark:text-gray-300 font-medium leading-tight w-full truncate text-center">
         {folder.name}
       </span>
