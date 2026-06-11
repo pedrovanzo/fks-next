@@ -16,7 +16,13 @@
 * Add saving and sharing functionalities to session, folders and links.
 ## Grilling sessions
 
-* Core concepts for MVP.
-* Data structure.
-* Data persistance.
-* Adding a markdown or custom description, maybe images or something (paid feature)
+1. **Terminology** — first of multiple sessions; starts with code names + core functionalities. Subsequent sessions expand as new topics are resolved. Includes tentative Session definition (browser extension tab-capture → Session entity).
+2. **MVP scope** — what's in v1, what's post-v1, what's explicitly out of scope. Runs after terminology so Claude knows the domain before scoping.
+3. **Data model + structure** — entity relationships, storage shape, cascade rules. Required subtopic: "Related" labels (folder↔link connections).
+4. **Database + auth** — DB choice, auth method. Must resolve before Sharing session.
+5. **Sharing + standalone handles** — public/private visibility, URI slug design, snapshot vs live shared content, read-only vs collaborative access.
+6. **Browser extension** — extension↔app architecture, tab capture into Session, auth handoff, cross-browser compatibility.
+7. **Plans + feature gates + payment** — free vs Pro tiers, feature gating strategy, payment system.
+8. **i18n** — internationalization approach.
+9. **Hosting** — deployment target, infrastructure.
+10. **UI/UX** — interface design, patterns, user flows.
