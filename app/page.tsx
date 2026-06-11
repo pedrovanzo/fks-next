@@ -2,6 +2,7 @@ import { readFile } from 'fs/promises';
 import path from 'path';
 import { LinkManager } from '@/app/components/LinkManager';
 import { TodoNote } from '@/app/components/dev/TodoNote';
+import { FolderStructure } from '@/app/components/dev/FolderStructure';
 
 export default async function Home() {
   const todoContent = await readFile(
@@ -9,5 +10,10 @@ export default async function Home() {
     'utf-8'
   );
 
-  return <LinkManager noteSlot={<TodoNote content={todoContent} />} />;
+  return (
+    <>
+      <FolderStructure />
+      <LinkManager noteSlot={<TodoNote content={todoContent} />} />
+    </>
+  );
 }
